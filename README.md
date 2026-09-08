@@ -22,19 +22,21 @@ A local desktop application for keeping a centralized history of vehicle service
 
 ## Run locally
 
-1. Install MySQL Server 8.0 or newer, then run `database-setup.sql` in MySQL Workbench or the MySQL command line. This creates the database and credentials expected by the application:
+1. Install MySQL Server 8.0 or newer, then run `database-setup.sql` in MySQL Workbench or the MySQL command line. This creates the database:
 
    ```sql
    CREATE DATABASE IF NOT EXISTS vehicle_log;
    ```
 
-   The application is configured for the MySQL `root` user with password `Password`. If you use different credentials, set `DB_USERNAME` and `DB_PASSWORD` before starting the application.
+   By default, the application connects as the MySQL `root` user with password `Password`. Make sure that user exists and has access to `vehicle_log`. If you use different credentials, set `DB_USERNAME` and `DB_PASSWORD` before starting the application.
 
 2. Start the JavaFX application:
 
    ```powershell
    .\mvnw javafx:run
    ```
+
+   MySQL must be running before the application starts. The desktop application also starts the REST API at `http://localhost:8080`.
 
 The application creates its tables automatically on first launch. Override `DB_URL`, `DB_USERNAME`, `DB_PASSWORD`, or `STORAGE_DIRECTORY` for another local setup.
 
@@ -46,3 +48,13 @@ The application creates its tables automatically on first launch. Override `DB_U
 - `DELETE /api/maintenance/{id}`
 - `POST /api/maintenance/documents` as multipart field `file`
 - `DELETE /api/vehicles/{id}`
+
+Example request:
+
+```powershell
+curl.exe -X POST http://localhost:8080/api/maintenance `
+   -H "Content-Type: application/json" `
+   -d '{"vehicleId":1,"serviceDate":"2026-09-08","mileage":42500,"description":"Oil change"}'
+```
+
+To use a different database or document location, set `DB_URL`, `DB_USERNAME`, `DB_PASSWORD`, or `STORAGE_DIRECTORY` before starting the application.
