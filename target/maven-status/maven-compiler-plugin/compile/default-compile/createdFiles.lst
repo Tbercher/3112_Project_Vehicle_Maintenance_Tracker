@@ -1,0 +1,15 @@
+com\vehiclelog\MaintenanceRequest.class
+com\vehiclelog\FileStorageService.class
+com\vehiclelog\MaintenanceService.class
+com\vehiclelog\MaintenanceController.class
+com\vehiclelog\MaintenanceRecordRepository.class
+com\vehiclelog\VehicleService.class
+com\vehiclelog\MaintenanceRecord.class
+com\vehiclelog\DashboardView.class
+com\vehiclelog\DashboardView$2.class
+com\vehiclelog\DashboardView$1.class
+com\vehiclelog\VehicleController.class
+com\vehiclelog\VehicleMaintenanceApplication.class
+com\vehiclelog\VehicleRepository.class
+com\vehiclelog\LocalFileMultipartFile.class
+com\vehiclelog\Vehicle.class
