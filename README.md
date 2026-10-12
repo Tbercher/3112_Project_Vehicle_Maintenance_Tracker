@@ -30,7 +30,7 @@ A local desktop application for keeping a centralized history of vehicle service
 
    By default, the application connects as the MySQL `root` user with password `Password`. Make sure that user exists and has access to `vehicle_log`. If you use different credentials, set `DB_USERNAME` and `DB_PASSWORD` before starting the application.
 
-2. Start the JavaFX application in your terminal:
+2. Start the JavaFX application in your IDE terminal:
 
    ```powershell
    .\mvnw javafx:run
