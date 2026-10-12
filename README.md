@@ -22,7 +22,7 @@ A local desktop application for keeping a centralized history of vehicle service
 
 ## Run locally
 
-1. Install MySQL Server 8.0 or newer, then run `database-setup.sql` in MySQL Workbench or the MySQL command line. This creates the database:
+1. Install MySQL Server 8.0 or newer, then run `database-setup.sql` (located in project root) in MySQL Workbench or the MySQL command line. This creates the database:
 
    ```sql
    CREATE DATABASE IF NOT EXISTS vehicle_log;
